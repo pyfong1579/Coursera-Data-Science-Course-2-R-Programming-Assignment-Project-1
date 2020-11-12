@@ -3,9 +3,9 @@ complete <- function(directory, id= 1:332){
   ## Initialize ID vector
   id_vect= c()
   
-  ## Initialize Object count vector
-  Observ_count_vect = c() #nobss
-  
+  ## Initialize Observ count vector
+  Observ_count_vect = c()
+
   ## Get filenames
   filenames = list.files(directory)
   
@@ -23,8 +23,8 @@ complete <- function(directory, id= 1:332){
     ##completeCases = subset(data, !is.na(Date) & !is.na(sulfate) & !is.na(nitrate) & !is.na(id),select = TRUE )
     completeCases = data[complete.cases(data), ]
     
-    id_vect =  c(id_vect, i)                    ## concatenate a id vector with i as inddex
-    Observ_count_vect = c(Observ_count_vect, nrow(completeCases) )      ## Concatenate the number of subsetted complete cases into a the observ count vector
+    id_vect =  c(id_vect, i)                                        ## concatenate id vector with i as index
+    Observ_count_vect = c(Observ_count_vect, nrow(completeCases))  ## Concatenate the subset complete cases into a the observ count vector
     
   }
   ## Return the data frame
